@@ -7,11 +7,31 @@ public class Account {
 	
 	void deposit(int extramoney)
 	{
+		if(extramoney <0)
+		{
+			System.out.println("[에러] 금액은 음수가 될 수 없습니다.");
+		}
+		else {
+		System.out.println(extramoney+"원을 입금합니다.");	
 		money+=extramoney;
+		}
+		System.out.println("잔액: "+getmoney()+"원");
 	}
 	void withdraw(int extramoney)
 	{
+		if(extramoney <0)
+		{
+			System.out.println("[에러] 금액은 음수가 될 수 없습니다.");
+		}
+		else if(money<extramoney)
+		{
+			System.out.println("[에러] 잔액이 부족합니다.");
+		}
+		else {
+		System.out.println(extramoney+"원을 출금합니다.");
 		money-=extramoney;
+		}
+		System.out.println("잔액: "+getmoney()+"원");
 	}
 	
 	void accountInfo()
